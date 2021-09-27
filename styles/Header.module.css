@@ -1,0 +1,45 @@
+.container {
+  width: 100%;
+  background-color: var(--background-color);
+  height: 8rem;
+  color: #ffff;
+}
+
+.nav{
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
+}
+
+.menu{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  color: #fff;
+}
+
+.title:hover{
+  color: var(--blue-color);
+}
+
+.logo{
+  color: var(--blue-color);
+  font-size: 2rem;
+}
+
+
+@media (min-width: 768px) {
+  .nav{
+  flex-direction: row;
+  margin-right: 4rem;
+  margin-left: 2rem;
+  }
+  .menu{
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 7rem;
+    margin: 2rem;
+    font-size: 1.3rem;
+  }
+}
