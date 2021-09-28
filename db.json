@@ -1,0 +1,69 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "titulo": "json-server",
+      "autor": "typicode",
+      "texto": "testando"
+    },
+    {
+      "titulo": "a",
+      "descricao": "a",
+      "autor": "a",
+      "texto": "a",
+      "id": 2
+    },
+    {
+      "titulo": "a",
+      "descricao": "a",
+      "autor": "a",
+      "texto": "aa",
+      "id": 3
+    },
+    {
+      "titulo": "a",
+      "descricao": "a",
+      "autor": "a",
+      "texto": "aa",
+      "id": 4
+    },
+    {
+      "titulo": "",
+      "descricao": "",
+      "autor": "",
+      "texto": "",
+      "id": 5
+    },
+    {
+      "titulo": "",
+      "descricao": "",
+      "autor": "",
+      "texto": "",
+      "id": 6
+    },
+    {
+      "titulo": "",
+      "descricao": "",
+      "autor": "",
+      "texto": "",
+      "id": 7
+    },
+    {
+      "titulo": "",
+      "descricao": "",
+      "autor": "",
+      "texto": "",
+      "id": 8
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}
