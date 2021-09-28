@@ -1,0 +1,10 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "titulo": "teste",
+       "autor": "matheus",
+       "texto": "testando"
+    }
+  ]
+}

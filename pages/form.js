@@ -1,3 +1,4 @@
+import axios from 'axios'
 import Link from 'next/link'
 import { useState } from 'react'
 import styles from '../styles/Form.module.css'
@@ -18,7 +19,16 @@ export default function Form() {
     setValor({ ...valores, [name]: valor })
   }
 
-  function onSubmit(e) {}
+  function onSubmit() {
+    axios
+      .post('url', valores)
+      .then(() => {
+        console.log('deu certo')
+      })
+      .catch(() => {
+        console.log('deu errado')
+      })
+  }
 
   return (
     <div className={styles.container}>
@@ -28,11 +38,18 @@ export default function Form() {
         </Link>
         <div className={styles.form}>
           <label>Titulo</label>
-          <input id="titulo" name="titulo" type="text" onChange={onChange} />
+          <input
+            required
+            id="titulo"
+            name="titulo"
+            type="text"
+            onChange={onChange}
+          />
         </div>
         <div className={styles.form}>
           <label>Descrição</label>
           <input
+            required
             id="descricao"
             name="descricao"
             type="text"
@@ -41,11 +58,18 @@ export default function Form() {
         </div>
         <div className={styles.form}>
           <label>Autor</label>
-          <input id="autor" name="autor" type="text" onChange={onChange} />
+          <input
+            required
+            id="autor"
+            name="autor"
+            type="text"
+            onChange={onChange}
+          />
         </div>
         <div className={styles.form}>
           <label>Publicação</label>
           <textarea
+            required
             onChange={onChange}
             id="texto"
             name="texto"
@@ -53,7 +77,9 @@ export default function Form() {
             className={styles.text_area}
           />
         </div>
-        <button className={styles.btn_sub}>Publique</button>
+        <button className={styles.btn_sub} onClick={onSubmit}>
+          Publique
+        </button>
       </form>
     </div>
   )

@@ -19,7 +19,7 @@ export default function Home() {
       {cards.map(card => (
         <Posts conteudo={card} />
       ))}
-
+      <Card1 />
       <Footer />
     </div>
   )
