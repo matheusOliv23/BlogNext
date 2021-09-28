@@ -6,15 +6,20 @@ import Footer from '../components/Footer/Footer'
 import Header from '../components/Header/Header'
 import Link from 'next/link'
 import styles from '../styles/Home.module.css'
+import Posts from '../components/Post/Post'
+import { useState } from 'react'
 
 export default function Home() {
+  const [cards, setCards] = useState([])
+
   return (
     <div>
       <Header />
       <Link href="/form">Ir para formulario</Link>
-      <Card1 />
-      <Card2 />
-      <Card3 />
+      {cards.map(card => (
+        <Posts conteudo={card} />
+      ))}
+
       <Footer />
     </div>
   )
