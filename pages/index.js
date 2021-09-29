@@ -1,18 +1,23 @@
 import Image from 'next/image'
+import useSWR from 'swr'
 import Card1 from '../components/Cards/Card1'
-import Card2 from '../components/Cards/Card2'
-import Card3 from '../components/Cards/Card3'
 import Footer from '../components/Footer/Footer'
 import Header from '../components/Header/Header'
 import Link from 'next/link'
-import styles from '../styles/Home.module.css'
-import Posts from '../components/Post/Post'
+import Posts from '../components/Post/[Post]'
 import { useEffect, useState } from 'react'
 import axios from 'axios'
+import { useFetch } from '../components/Hooks/useFetch'
 
 export default function Home() {
-  const [cards, setCards] = useState([])
   const [posts, setPosts] = useState([])
+
+  /*const fetcher = (...args) => axios.get(args).then(resp => resp)
+  const swrClient = useSWR('http://localhost:5000/posts', fetcher)
+*/
+  /* if (!data) {
+    return <p>Carregando</p>
+  }*/
 
   useEffect(() => {
     axios
@@ -25,15 +30,18 @@ export default function Home() {
       })
   }, [])
 
+  /*function excluirPost(id) {
+    axios.delete(`http://localhost:5000/posts/${posts.id}`).then(() => {
+      setPosts(posts.filter(post => post.id !== id))
+    })
+  }*/
+
   return (
     <div>
       <Header />
       <Link href="/form">Ir para formulario</Link>
-      {cards.map(card => (
-        <Posts conteudo={card} />
-      ))}
-      {posts.map(posts => (
-        <Posts conteudo={posts} />
+      {posts.map(post => (
+        <Posts conteudo={post} />
       ))}
       <Card1 />
       <Footer />

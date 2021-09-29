@@ -1,5 +1,6 @@
 import axios from 'axios'
-import { Router } from 'next/router'
+import router, { Router } from 'next/router'
+import { useRouter } from 'next/router'
 import Link from 'next/link'
 import { useState } from 'react'
 
@@ -11,20 +12,21 @@ export default function Form() {
   const [autor, setAutor] = useState('')
   const [texto, setTexto] = useState('')
 
+  const router = useRouter()
+
   const addPost = {
     titulo,
     descricao,
     autor,
     texto
   }
-  console.log(addPost)
   function onSubmit(e) {
     e.preventDefault()
+
     axios
       .post('http://localhost:5000/posts', addPost)
       .then(() => {
-        console.log('deu certo')
-        Router.push('/')
+        router.push('/')
       })
       .catch(() => {
         console.log('deu errado')
@@ -82,10 +84,9 @@ export default function Form() {
             onChange={e => setTexto(e.target.value)}
           />
         </div>
-        <button className={styles.btn_sub} onClick={onSubmit}>
+        <button href="/" className={styles.btn_sub} onClick={onSubmit}>
           Publique
         </button>
-        <p>{autor}</p>
       </form>
     </div>
   )

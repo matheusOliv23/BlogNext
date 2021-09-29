@@ -1,0 +1,13 @@
+.artigo{
+ width: 100%;  
+ text-align: center;
+ display: flex;
+ justify-content: space-between;
+ flex-direction: column;
+ align-items: center;
+}
+
+.titulo_artigo{
+  font-size: 1.5rem;
+}
+

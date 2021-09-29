@@ -10,7 +10,7 @@ export default function Header() {
 
         <ul className={styles.menu}>
           <li>
-            <a href="" className={styles.title}>
+            <a href="/" className={styles.title}>
               Artigos
             </a>{' '}
           </li>
