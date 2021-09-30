@@ -45,13 +45,19 @@
 
 .btn_delete{
   color: #fff;
-  font-size: 1rem;
-  background-color: red;
+  font-size: 1.2rem;
+  background-color: rgb(160, 43, 43);
   border: none;
+  padding: 0.3rem;
+  border-radius: 2px;
   outline: none;
   cursor: pointer;
 }
 
+.btn_delete:hover{
+ background-color: #fff;
+ color: rgb(160, 43, 43);
+}
  
 .img_card {
   background-image: url(../components/Img/sasithon-prehofer-pixabay.png);
@@ -63,11 +69,23 @@
   margin: 1rem;
 }
 
+.flex{
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  
+}
+
 
 
  @media (min-width: 768px){
    .custom_card{
      width: 800px;
+   }
+   .flex{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;  
    }
  }
 

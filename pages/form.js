@@ -1,5 +1,4 @@
 import axios from 'axios'
-import router, { Router } from 'next/router'
 import { useRouter } from 'next/router'
 import Link from 'next/link'
 import { useState } from 'react'
@@ -25,7 +24,7 @@ export default function Form() {
 
     axios
       .post('http://localhost:5000/posts', addPost)
-      .then(() => {
+      .then(resp => {
         router.push('/')
       })
       .catch(() => {

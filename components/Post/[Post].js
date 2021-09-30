@@ -1,7 +1,6 @@
 import styles from '../../styles/Card.module.css'
 import Link from 'next/link'
 import axios from 'axios'
-import { useState } from 'react'
 
 export default function Posts({ conteudo, excluirPost, posts, setPosts }) {
   function excluirPost(id) {
@@ -9,6 +8,8 @@ export default function Posts({ conteudo, excluirPost, posts, setPosts }) {
       setPosts(posts.filter(post => post.id !== id))
     })
   }
+
+  function editarPost(id) {}
 
   return (
     <div className={styles.cards}>
@@ -21,8 +22,15 @@ export default function Posts({ conteudo, excluirPost, posts, setPosts }) {
           <div className={styles.text}>{conteudo.descricao}</div>
           <div className={styles.text}>Publicado em 20/09/2021</div>
           <div className={styles.text}>Autor: {conteudo.autor}</div>
-          <div className={styles.btn_del}>
-            <button onClick={() => excluirPost(conteudo.id)}>Deletar</button>
+          <div className={styles.flex}>
+            <div>
+              <button
+                className={styles.btn_delete}
+                onClick={() => excluirPost(conteudo.id)}
+              >
+                Deletar
+              </button>
+            </div>
           </div>
         </div>
       </div>

@@ -1,20 +1,15 @@
-import Image from 'next/image'
-import useSWR from 'swr'
-import Card1 from '../components/Cards/Card1'
 import Footer from '../components/Footer/Footer'
 import Header from '../components/Header/Header'
-import Link from 'next/link'
 import Posts from '../components/Post/[Post]'
 import { useEffect, useState } from 'react'
 import axios from 'axios'
-import { useFetch } from '../components/Hooks/useFetch'
 
-export default function Home({ conteudo }) {
+export default function Home() {
   const [posts, setPosts] = useState([])
 
   useEffect(() => {
     axios
-      .get('http://localhost:5000/posts')
+      .get('http://localhost:5000/posts?_order=desc&_sort=id')
       .then(response => {
         setPosts(response.data)
       })
@@ -23,25 +18,14 @@ export default function Home({ conteudo }) {
       })
   }, [])
 
-  /*function excluirPost(id) {
-    axios.delete(`http://localhost:5000/posts/${conteudo.id}`).then(() => {
-      setPosts(posts.filter(post => post.id !== id))
-    })
-  }
-*/
-
-  function excluirPost(id) {
-    setPosts(posts.filter(post => post.id !== id))
-  }
-
   return (
     <div>
       <Header />
-      <Link href="/form">Ir para formulario</Link>
       {posts.map(post => (
-        <Posts conteudo={post} posts={posts} setPosts={setPosts} />
+        <li key={post}>
+          <Posts conteudo={post} posts={posts} setPosts={setPosts} />
+        </li>
       ))}
-      <Card1 />
       <Footer />
     </div>
   )
