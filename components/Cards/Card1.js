@@ -6,7 +6,7 @@ export default function Card1() {
       <div className={styles.custom_card}>
         <div className={styles.img_card}></div>
         <div className={styles.card_text}>
-          <a href="/">Por que escolhi JavaScript</a>
+          <a>Por que escolhi JavaScript</a>
           <div className={styles.text}>
             Porque você deveria aprender JavaScript
           </div>
