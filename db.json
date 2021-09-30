@@ -1,41 +1,5 @@
 {
-  "posts": [
-    {
-      "titulo": "",
-      "descricao": "",
-      "autor": "",
-      "texto": "",
-      "id": 7
-    },
-    {
-      "titulo": "aaa",
-      "descricao": "aaaa",
-      "autor": "aaaa",
-      "texto": "aaa",
-      "id": 8
-    },
-    {
-      "titulo": "aaa",
-      "descricao": "aaaa",
-      "autor": "aaaa",
-      "texto": "aaa",
-      "id": 9
-    },
-    {
-      "titulo": "aaa",
-      "descricao": "aaaa",
-      "autor": "aaaa",
-      "texto": "aaaaaa",
-      "id": 10
-    },
-    {
-      "titulo": "Matheus",
-      "descricao": "a",
-      "autor": "a",
-      "texto": "asass\n",
-      "id": 11
-    }
-  ],
+  "posts": [],
   "comments": [],
   "profile": {
     "name": "typicode"

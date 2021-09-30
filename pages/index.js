@@ -9,7 +9,7 @@ import { useEffect, useState } from 'react'
 import axios from 'axios'
 import { useFetch } from '../components/Hooks/useFetch'
 
-export default function Home() {
+export default function Home({ conteudo }) {
   const [posts, setPosts] = useState([])
 
   useEffect(() => {
@@ -24,17 +24,22 @@ export default function Home() {
   }, [])
 
   /*function excluirPost(id) {
-    axios.delete(`http://localhost:5000/posts/${id}`).then(() => {
-      setPosts(posts.filter(post => post._id !== id))
+    axios.delete(`http://localhost:5000/posts/${conteudo.id}`).then(() => {
+      setPosts(posts.filter(post => post.id !== id))
     })
-  }*/
+  }
+*/
+
+  function excluirPost(id) {
+    setPosts(posts.filter(post => post.id !== id))
+  }
 
   return (
     <div>
       <Header />
       <Link href="/form">Ir para formulario</Link>
       {posts.map(post => (
-        <Posts conteudo={post} posts={posts} />
+        <Posts conteudo={post} posts={posts} setPosts={setPosts} />
       ))}
       <Card1 />
       <Footer />
