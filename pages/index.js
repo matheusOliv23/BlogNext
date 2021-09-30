@@ -12,13 +12,6 @@ import { useFetch } from '../components/Hooks/useFetch'
 export default function Home() {
   const [posts, setPosts] = useState([])
 
-  /*const fetcher = (...args) => axios.get(args).then(resp => resp)
-  const swrClient = useSWR('http://localhost:5000/posts', fetcher)
-*/
-  /* if (!data) {
-    return <p>Carregando</p>
-  }*/
-
   useEffect(() => {
     axios
       .get('http://localhost:5000/posts')
@@ -31,8 +24,8 @@ export default function Home() {
   }, [])
 
   /*function excluirPost(id) {
-    axios.delete(`http://localhost:5000/posts/${posts.id}`).then(() => {
-      setPosts(posts.filter(post => post.id !== id))
+    axios.delete(`http://localhost:5000/posts/${id}`).then(() => {
+      setPosts(posts.filter(post => post._id !== id))
     })
   }*/
 
@@ -41,7 +34,7 @@ export default function Home() {
       <Header />
       <Link href="/form">Ir para formulario</Link>
       {posts.map(post => (
-        <Posts conteudo={post} />
+        <Posts conteudo={post} posts={posts} />
       ))}
       <Card1 />
       <Footer />

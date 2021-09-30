@@ -6,9 +6,9 @@ import axios from 'axios'
 import Header from '../../components/Header/Header'
 import Footer from '../../components/Footer/Footer'
 
-export default function Artigo({ posts }) {
+export default function Artigo({ artigo }) {
   const router = useRouter()
- /* const [artigo, setArtigo] = useState([])
+  /* const [artigo, setArtigo] = useState([])
 
   axios
     .get('http://localhost:5000/posts')
@@ -25,9 +25,9 @@ export default function Artigo({ posts }) {
       <main className={styles.artigo}>
         <div className={styles.titulo_artigo}>
           <h2>Post:{router.query.id}</h2>
-          <h2>{posts.titulo}</h2>
+          <h2>{artigo.titulo}</h2>
         </div>
-        <div className={styles.texto_artigo}>{posts.texto}</div>
+        <div className={styles.texto_artigo}>{artigo.texto}</div>
       </main>
       <Footer />
     </div>
@@ -35,11 +35,11 @@ export default function Artigo({ posts }) {
 }
 
 export async function getStaticPaths() {
-  const posts = await fetch('http://localhost:5000/posts').then(resposta =>
+  const artigo = await fetch('http://localhost:5000/posts').then(resposta =>
     resposta.json()
   )
 
-  const paths = posts.map(item => ({
+  const paths = artigo.map(item => ({
     params: {
       id: item.id.toString()
     }
@@ -51,13 +51,13 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params }) {
-  const posts = await fetch(`http://localhost:5000/posts/${params.id}`).then(
+  const artigo = await fetch(`http://localhost:5000/posts/${params.id}`).then(
     resposta => resposta.json()
   )
 
   return {
     props: {
-      posts
+      artigo
     }
   }
 }
