@@ -22,9 +22,9 @@ export default function Artigo({ artigo }) {
 }
 
 export async function getStaticPaths() {
-  const artigo = await fetch('http://localhost:5000/posts')
-    .then(resposta => resposta.json())
-    .then(respostaObjeto => respostaObjeto)
+  const artigo = await fetch('http://localhost:5000/posts').then(resposta =>
+    resposta.json()
+  )
 
   const paths = artigo.map(item => ({
     params: {
