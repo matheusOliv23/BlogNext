@@ -42,13 +42,11 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params }) {
-  const artigo = await fetch(`http://localhost:5000/posts/${params.id}`)
-    .then(resposta => {
-      if (resposta.ok) {
-        return resposta.json()
-      }
-    })
-    .then(respostaObjeto => respostaObjeto)
+  const artigo = await fetch(`http://localhost:5000/posts/${params.id}`).then(
+    resposta => {
+      return resposta.json()
+    }
+  )
 
   return {
     props: {
