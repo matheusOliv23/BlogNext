@@ -6,9 +6,7 @@ export default function Header() {
     <header className={styles.container}>
       <nav className={styles.nav}>
         <Link href="/">
-          <a className={styles.logo} href="/">
-            &lt;FRONT&frasl;&gt;
-          </a>
+          <a className={styles.logo}>&lt;FRONT&frasl;&gt;</a>
         </Link>
 
         <ul className={styles.menu}>
