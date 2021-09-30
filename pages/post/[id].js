@@ -22,9 +22,11 @@ export default function Artigo({ artigo }) {
 }
 
 export async function getStaticPaths() {
-  const artigo = await fetch('http://localhost:5000/posts').then(resposta =>
-    resposta.json()
-  )
+  const artigo = await fetch('http://localhost:5000/posts').then(resposta => {
+    if (resposta.ok) {
+      return resposta.json()
+    }
+  })
 
   const paths = artigo.map(item => ({
     params: {
@@ -39,7 +41,11 @@ export async function getStaticPaths() {
 
 export async function getStaticProps({ params }) {
   const artigo = await fetch(`http://localhost:5000/posts/${params.id}`).then(
-    resposta => resposta.json()
+    resposta => {
+      if (resposta.ok) {
+        return resposta.json()
+      }
+    }
   )
 
   return {
