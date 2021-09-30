@@ -27,5 +27,5 @@ $ npm install
 
 ### Execute a aplicação em modo de desenvolvimento (precisará abrir dois terminais dentro do VSCode.)
 
-$ npm run dev ou yarn dev - Abrirá o servidor de desenvolvimento na porta 3000 - acesse <http://localhost:3000>
-$ json-server --watch db.json --port 5000 - Abrirá o Json-server na porta 5000 - acesse <http://localhost:5000>
+- $ npm run dev ou yarn dev - Abrirá o servidor na porta 3000
+- $ json-server --watch db.json --port 5000 - Abrirá o Json-server na porta 5000
