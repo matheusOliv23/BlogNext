@@ -18,7 +18,7 @@ body {
 }
 
 body{
-  height: 100vh;
+  padding-bottom: 200px;
 }
 
 a {
@@ -39,3 +39,10 @@ button{
   cursor: pointer;
 }
 
+
+
+@media (min-width: 768px){
+  body {
+    height: 100vh;
+  }
+}
