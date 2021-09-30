@@ -13,19 +13,19 @@ Meu primeiro projeto feito com o framework NextJS
 
 Você precisa ter instalado em sua máquina o [Git](https://git-scm.com), o [Node.js](https://nodejs.org/en/) e um editor de código. Recomendo o [VSCode](https://code.visualstudio.com/).
 
-# Clone este repositório
+### Clone este repositório
 
 $ git clone <https://github.com/tgmarinho/nlw1>
 
-# Acesse a pasta do projeto no terminal/cmd
+### Acesse a pasta do projeto no terminal/cmd
 
 $ cd blog-next
 
-# Instale as dependências
+### Instale as dependências
 
 $ npm install
 
-# Execute a aplicação em modo de desenvolvimento (precisará abrir dois terminais dentro do VSCode.)
+### Execute a aplicação em modo de desenvolvimento (precisará abrir dois terminais dentro do VSCode.)
 
 $ npm run dev ou yarn dev - Abrirá o servidor de desenvolvimento na porta 3000 - acesse <http://localhost:3000>
 $ json-server --watch db.json --port 5000 - Abrirá o Json-server na porta 5000 - acesse <http://localhost:5000>
