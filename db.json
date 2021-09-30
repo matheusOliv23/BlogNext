@@ -1,11 +1,3 @@
 {
-  "posts": [
-    {
-      "titulo": "dasda",
-      "descricao": "dasads",
-      "autor": "adadsda",
-      "texto": "sadsadsdas",
-      "id": 1
-    }
-  ]
+  "posts": []
 }
