@@ -1,6 +1,5 @@
 import styles from '../../styles/Card.module.css'
 import Link from 'next/link'
-import Artigo from '../../pages/[artigo]'
 
 export default function Posts({ conteudo, excluirPost, excluircard }) {
   return (
@@ -8,9 +7,7 @@ export default function Posts({ conteudo, excluirPost, excluircard }) {
       <div className={styles.custom_card}>
         <div className={styles.img_card}></div>
         <div className={styles.card_text}>
-          <Link href="/artigo/id">
-            <a> {conteudo.titulo} </a>
-          </Link>
+          <a> {conteudo.titulo} </a>
 
           <div className={styles.text}>{conteudo.descricao}</div>
           <div className={styles.text}>Publicado em 20/09/2021</div>
