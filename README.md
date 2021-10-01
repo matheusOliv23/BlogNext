@@ -15,7 +15,7 @@ Você precisa ter instalado em sua máquina o [Git](https://git-scm.com), o [Nod
 
 ### Clone este repositório
 
-$ git clone <https://github.com/tgmarinho/nlw1>
+$ git clone <https://github.com/matheusOliv23/BlogNext.git>
 
 ### Acesse a pasta do projeto no terminal/cmd
 
